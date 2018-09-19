@@ -1,0 +1,31 @@
+﻿@model List<System.Security.Claims.Claim>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h2>Authenticated</h2>
+    <ul>
+        @foreach (var claim in User.Claims)
+        {
+            <li><strong>@claim.Type:</strong> @claim.Value</li>
+        }
+    </ul>
+    <a asp-action="GetUserClaims" class="btn btn-primary">Get User Claims</a>
+    if (Model?.Any() == true)
+    {
+        <h3>User Claims</h3>
+        <ul>
+            @foreach (var claim in Model)
+            {
+                <li><strong>@claim.Type:</strong> @claim.Value</li>
+            }
+        </ul>
+    }
+}
+else
+{
+    <h2>Unauthenticated</h2>
+}
