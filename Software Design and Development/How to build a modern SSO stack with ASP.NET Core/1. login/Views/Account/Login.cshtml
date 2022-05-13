@@ -1,0 +1,10 @@
+@model MyWebsite.Controllers.LoginModel
+
+
+<form asp-action="Login">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="Username"/>
+    <input asp-for="Password"/>
+    <input asp-for="ReturnUrl" type="hidden"/>
+    <button type="submit">Login</button>
+</form>
