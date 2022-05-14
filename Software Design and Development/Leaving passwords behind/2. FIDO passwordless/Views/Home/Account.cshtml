@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Your account";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Hi, @User.Identity.Name. Here are your account details:</p>
+<ul>
+    @foreach (var claim in User.Claims)
+    {
+        <li><strong>@claim.Type:</strong> @claim.Value</li>
+    }
+</ul>
+<p>
+    <a asp-controller="Account" asp-action="StartFidoRegistration">Click here to register a FIDO authenticator.</a>
+</p>
