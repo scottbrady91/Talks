@@ -12,6 +12,10 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data S
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>();
 
+// TODO: FIDO2
+
+
+
 var app = builder.Build();
 
 app.UseDeveloperExceptionPage();
