@@ -1,0 +1,13 @@
+﻿@model MyWebsite.Controllers.FidoRegistrationModel
+@{
+    ViewData["Title"] = "Register FIDO authenticator";
+}
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<form asp-action="FidoRegistration">
+    <div class="mb-3">
+        <label asp-for="DeviceName" class="form-label">Device name</label>
+        <input asp-for="DeviceName" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
